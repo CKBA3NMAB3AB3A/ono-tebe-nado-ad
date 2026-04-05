@@ -1,5 +1,3 @@
-/* БАЗОВЫЕ НАСТРОЙКИ И ПЕРЕИСПОЛЬЗУЕМЫЕ КЛАССЫ */
-
 a {
   text-decoration: none;
 }
@@ -8,7 +6,6 @@ ul {
   list-style: none;
 }
 
-/* Оверлей для затемнения фонов */
 .overlay {
   position: absolute;
   inset: 0;
@@ -16,7 +13,6 @@ ul {
   z-index: 1;
 }
 
-/* Общий класс для блоков с адресом */
 .address {
   font-style: normal;
   font-size: 18px;
@@ -27,8 +23,6 @@ ul {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
-
-/* ШАПКА САЙТА */
 
 .header {
   display: grid;
@@ -43,16 +37,15 @@ ul {
 
 .header__links-list {
   display: flex;
-  flex-direction: row; /* Жёстко заставляем меню быть в линию */
   align-items: center;
   gap: 32px;
   list-style: circle;
   padding-left: 20px;
-  margin: 0; /* Сбрасываем возможные браузерные отступы */
+  margin: 0;
 }
 
 .header__links-list-item {
-  list-style-position: inside; 
+  list-style-position: inside;
 }
 
 .header__links-list-item_no-bullit {
@@ -85,16 +78,13 @@ ul {
   width: 240px;
 }
 
-
-/* ОБЛОЖКА (ГЛАВНАЯ СЕКЦИЯ) */
-
 .cover {
   position: relative;
   background: url('../images/cover.jpg') center/cover no-repeat;
   padding: 165px 50px 50px;
   display: flex;
   flex-direction: column;
-  height: 757px; /* Меняем min-height на жесткий height */
+  height: 757px;
   color: #fff;
 }
 
@@ -138,13 +128,13 @@ ul {
   justify-content: space-between;
   align-items: center;
   margin-top: auto;
-  width: 100%; /* Добавили 100% ширины */
+  width: 100%;
 }
 
 .cover__description-text {
   font-size: 22px;
   text-transform: uppercase;
-  word-spacing: 18px; /* Увеличенное расстояние между словами */
+  word-spacing: 18px;
 }
 
 .bet-button {
@@ -156,9 +146,6 @@ ul {
   padding: 12px 32px;
   cursor: pointer;
 }
-
-
-/* СЕКЦИЯ: ЛОТЫ */
 
 .lots {
   padding: 120px 24px;
@@ -175,18 +162,22 @@ ul {
 .lots__card-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 25px; /* Расстояние между карточками */
+  gap: 25px;
+  margin: 0;
+  padding: 0;
 }
 
 .lots__card-list-item {
   width: 334px;
   min-height: 596px;
-  display: flex; /* Добавили флекс, чтобы ссылка растянулась */
+  display: flex;
+  flex-grow: 1;
 }
 
 .card-link {
   display: block;
-  width: 100%; /* Растягиваем на всю ширину li */
+  width: 100%;
+  height: 100%;
   text-decoration: none;
 }
 
@@ -199,10 +190,9 @@ ul {
   color: #fff;
   background-size: cover;
   background-position: center;
-  position: relative; /* Обязательно, чтобы оверлей не ломал флексбокс */
+  position: relative;
 }
 
-/* Убедитесь, что пути к картинкам карточек верные */
 .card_type_film {
   background-image: url('../images/card-lot-01.jpg');
 }
@@ -219,7 +209,7 @@ ul {
   position: relative;
   z-index: 2;
   font-size: 22px;
-  line-height: 1.2; /* Строго как в Figma */
+  line-height: 1.2;
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: underline;
@@ -229,29 +219,26 @@ ul {
   position: relative;
   z-index: 2;
   font-size: 20px;
-  line-height: 1.2; /* Строго как в Figma */
+  line-height: 1.2;
   font-weight: 400;
 }
 
 .lots__look-more-link {
-  display: block; /* Меняем inline-block на block */
-  width: max-content; /* Ширина по тексту */
+  display: block;
+  width: max-content;
   font-size: 20px;
   margin-top: 30px;
-  margin-left: 40px; /* Выравниваем по линии текста в первой карточке */
+  margin-left: 40px;
   border-bottom: 1px solid #000;
   padding-bottom: 2px;
 }
-
-
-/* СЕКЦИЯ: ОБ АУКЦИОНЕ */
 
 .about {
   display: grid;
   grid-template-columns: 334px 1fr;
   gap: 25px;
   padding: 0 24px 120px;
-  align-items: start; /* Важно: прижимаем колонки к верхнему краю */
+  align-items: start;
 }
 
 .about__logo {
@@ -273,7 +260,7 @@ ul {
   font-size: 40px;
   font-weight: 700;
   text-transform: uppercase;
-  margin-top: 100px; /* Опускает заголовок ровно на центр круга */
+  margin-top: 100px;
   margin-bottom: 100px;
 }
 
@@ -282,13 +269,9 @@ ul {
   line-height: 1.2;
 }
 
-/* Отступ только для первого абзаца */
 .about__text p:first-child {
   margin-bottom: 24px;
 }
-
-
-/* ПОДВАЛ САЙТА */
 
 .footer {
   display: grid;
@@ -297,7 +280,6 @@ ul {
   align-items: start;
 }
 
-/* В футере адрес прижат к левому краю */
 .footer .address {
   justify-self: start;
 }
@@ -311,6 +293,8 @@ ul {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 .footer__menu-link {
@@ -330,6 +314,8 @@ ul {
   justify-self: end;
   display: flex;
   gap: 48px;
+  margin: 0;
+  padding: 0;
 }
 
 .footer__social-icon {
