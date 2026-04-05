@@ -43,10 +43,12 @@ ul {
 
 .header__links-list {
   display: flex;
+  flex-direction: row; /* Жёстко заставляем меню быть в линию */
   align-items: center;
   gap: 32px;
-  list-style: circle; /* Оставляем как просят в задании */
-  /* Убираем padding-left, если он был */
+  list-style: circle;
+  padding-left: 20px;
+  margin: 0; /* Сбрасываем возможные браузерные отступы */
 }
 
 .header__links-list-item {
@@ -217,24 +219,26 @@ ul {
   position: relative;
   z-index: 2;
   font-size: 22px;
+  line-height: 1.2; /* Строго как в Figma */
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: underline;
-  line-height: 1.2;
 }
 
 .card__text {
   position: relative;
   z-index: 2;
   font-size: 20px;
-  line-height: 1.2;
+  line-height: 1.2; /* Строго как в Figma */
+  font-weight: 400;
 }
 
 .lots__look-more-link {
-  display: inline-block;
+  display: block; /* Меняем inline-block на block */
+  width: max-content; /* Ширина по тексту */
   font-size: 20px;
   margin-top: 30px;
-  margin-left: 16px;
+  margin-left: 40px; /* Выравниваем по линии текста в первой карточке */
   border-bottom: 1px solid #000;
   padding-bottom: 2px;
 }
@@ -244,9 +248,10 @@ ul {
 
 .about {
   display: grid;
-  grid-template-columns: 334px 1fr; /* Левая колонка равна ширине карточки */
+  grid-template-columns: 334px 1fr;
   gap: 25px;
   padding: 0 24px 120px;
+  align-items: start; /* Важно: прижимаем колонки к верхнему краю */
 }
 
 .about__logo {
@@ -268,8 +273,8 @@ ul {
   font-size: 40px;
   font-weight: 700;
   text-transform: uppercase;
+  margin-top: 100px; /* Опускает заголовок ровно на центр круга */
   margin-bottom: 100px;
-  margin-top: 100px; /* <--- Добавили этот отступ для выравнивания с логотипом */
 }
 
 .about__text p {
