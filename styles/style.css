@@ -43,9 +43,14 @@ ul {
 
 .header__links-list {
   display: flex;
+  align-items: center;
   gap: 32px;
-  list-style: circle;
-  padding-left: 20px; /* Отступ для видимости маркеров списка */
+  list-style: circle; /* Оставляем как просят в задании */
+  /* Убираем padding-left, если он был */
+}
+
+.header__links-list-item {
+  list-style-position: inside; 
 }
 
 .header__links-list-item_no-bullit {
@@ -83,12 +88,11 @@ ul {
 
 .cover {
   position: relative;
-  /* Убедитесь, что название картинки совпадает с вашим */
   background: url('../images/cover.jpg') center/cover no-repeat;
   padding: 165px 50px 50px;
   display: flex;
   flex-direction: column;
-  min-height: 757px;
+  height: 757px; /* Меняем min-height на жесткий height */
   color: #fff;
 }
 
@@ -131,7 +135,8 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: auto; /* Прижимает блок к низу */
+  margin-top: auto;
+  width: 100%; /* Добавили 100% ширины */
 }
 
 .cover__description-text {
@@ -174,16 +179,16 @@ ul {
 .lots__card-list-item {
   width: 334px;
   min-height: 596px;
-  flex-grow: 1;
+  display: flex; /* Добавили флекс, чтобы ссылка растянулась */
 }
 
 .card-link {
   display: block;
-  height: 100%;
+  width: 100%; /* Растягиваем на всю ширину li */
+  text-decoration: none;
 }
 
 .card {
-  position: relative;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -192,6 +197,7 @@ ul {
   color: #fff;
   background-size: cover;
   background-position: center;
+  position: relative; /* Обязательно, чтобы оверлей не ломал флексбокс */
 }
 
 /* Убедитесь, что пути к картинкам карточек верные */
@@ -263,6 +269,7 @@ ul {
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 100px;
+  margin-top: 100px; /* <--- Добавили этот отступ для выравнивания с логотипом */
 }
 
 .about__text p {
